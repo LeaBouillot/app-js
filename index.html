@@ -3,13 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>App ToDo</title>
   </head>
+
   <body>
-    <form id="login-form">
+    <form id="login-form" class="hidden">
       <input type="text" placeholder="Votre nom" />
-      <button>Se connecter</button>
+      <input type="submit" value="Se connecter"/>
     </form>
+    <h1 id="bonjour" class="hidden"></h1>
 
     <script src="app.js"></script>
   </body>
