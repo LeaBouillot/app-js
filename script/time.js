@@ -9,4 +9,4 @@ function getClock() {
   clock.innerText = `${hours}:${minutes}:${seconds}`;
 }
 getClock(); //afficher imediatement
-setInterval(getClock, 1000); // evrey 1 second
+setInterval(getClock, 1000); // every 1 second
