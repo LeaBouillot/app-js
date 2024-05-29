@@ -12,10 +12,10 @@ function loginSubmit(event) {
   loginForm.classList.add(HIDDEN_CLASSNAME); //et apres loginForm est disparut
   const username = loginInput.value; //obtenir value de input
   localStorage.setItem(USERNAME_KEY, username); //save username dans local storage
-  bonjourUsername(username)
+  bonjourUsername(username);
 }
 
-function bonjourUsername(username){
+function bonjourUsername(username) {
   bonjour.innerText = `Bonjour ${username}`;
   bonjour.classList.remove(HIDDEN_CLASSNAME);
 }
