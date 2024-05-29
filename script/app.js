@@ -27,3 +27,8 @@ if (saveUsername === null) {
 } else {
   bonjourUsername(saveUsername);
 }
+//localStorage (DB API de web (browser))
+//localStorage.setItem("myCat", "Tom");    adds a data item
+//const cat = localStorage.getItem("myCat");   for reading the localStorage item
+//localStorage.removeItem("myCat");
+//localStorage.clear();
