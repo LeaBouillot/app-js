@@ -10,6 +10,8 @@ function saveToDos() {
 function deleteTodo(event) {
     const li = event.target.parentNode; //chaque button a different de parentNode, on peut effcer la liste qu on click
     li.remove();
+    toDoArray = toDoArray.filter(toDo => toDo.id !== parseInt(li.id));
+    saveToDos();
 }
 
 function addTodo(newTodo) {
@@ -27,17 +29,22 @@ function addTodo(newTodo) {
 function addTodoSubmit(event) {
   event.preventDefault();
   const newTodo = toDoInput.value;
-  toDoInput.value = " ";
-  toDoArray.push(newTodo); //ajouter (push) dans un tableau toDo
-  addTodo(newTodo);
+  toDoInput.value = "";
+  const newTodoObject = {
+    id: Date.now(), //OU   id: toDoArray.length + 1
+    text: newTodo,
+  };
+  toDoArray.push(newTodoObject); //ajouter (push) dans un tableau toDo
+  addTodo(newTodoObject);
   saveToDos();//save toDo dans le local storage
 }
 toDoForm.addEventListener("submit", addTodoSubmit);
 
-const toDos = JSON.parse(localStorage.getItem("todos"));
+const toDos = localStorage.getItem("todos");
 
-if (toDos) {
-  toDoArray = toDos; // ancien todos est dans le toDosArray (local storage)
-  toDoArray.forEach(addTodo);
+if (toDos !== null) {
+  const parseToDos = JSON.parse(toDos);
+  toDoArray = parseToDos; // ancien todos est dans le toDosArray (local storage)
+  parseToDos.forEach(addTodo);
 }
  
