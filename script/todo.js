@@ -40,3 +40,4 @@ if (toDos) {
   toDoArray = toDos; // ancien todos est dans le toDosArray (local storage)
   toDoArray.forEach(addTodo);
 }
+ 
